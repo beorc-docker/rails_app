@@ -4,12 +4,15 @@ db:
     - ~/VM/DockerData/app/pg/var/lib/postgresql:/var/lib/postgresql
     - ~/VM/DockerData/app/pg/var/log/postgresql:/var/log/postgresql
   env_file: .env
-web:
+dev:
   build: .
-  volumes:
-    - .:/app
+  dockerfile: Dockerfile
   links:
     - db
   env_file: .env
+  ports:
+    - "3000:3000"
   volumes:
-    - ~/VM/DockerData/gems:/usr/local/bundler/gems
+    - .:/home/apps/app
+  volumes_from:
+    - gems-2.2
