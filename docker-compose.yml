@@ -1,0 +1,15 @@
+db:
+  image: beorc/postgres
+  volumes:
+    - ~/VM/DockerData/app/pg/var/lib/postgresql:/var/lib/postgresql
+    - ~/VM/DockerData/app/pg/var/log/postgresql:/var/log/postgresql
+  env_file: .env
+web:
+  build: .
+  volumes:
+    - .:/app
+  links:
+    - db
+  env_file: .env
+  volumes:
+    - ~/VM/DockerData/gems:/usr/local/bundler/gems
