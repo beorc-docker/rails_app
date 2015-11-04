@@ -1,9 +1,8 @@
 db:
   image: beorc/postgres
-  volumes:
-    - ~/VM/DockerData/app/pg/var/lib/postgresql:/var/lib/postgresql
-    - ~/VM/DockerData/app/pg/var/log/postgresql:/var/log/postgresql
   env_file: .env
+  volumes_from:
+    - db-data
 dev:
   build: .
   dockerfile: Dockerfile
