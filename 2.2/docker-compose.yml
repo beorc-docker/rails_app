@@ -1,5 +1,5 @@
 db:
-  image: beorc/postgres
+  image: httplab/postgres
   env_file: .env
   volumes_from:
     - db-data
