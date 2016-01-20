@@ -33,3 +33,6 @@ RUN chown $USER:$USER $HOME/$APP && \
     chown -R $USER:$USER /usr/local/lib/ruby/gems/$RUBY_MAJOR.0/doc
 
 RUN adduser $USER root
+
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
