@@ -21,7 +21,7 @@ ENV GEM_HOME /.gem
 ENV PATH $GEM_HOME/bin:$PATH
 ENV BUNDLE_APP_CONFIG $GEM_HOME
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev phantomjs
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
 
 ENV HOME /home/$USER
 RUN adduser --disabled-password --gecos '' $USER
