@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM httplab/ruby-dev:2.3
 
 RUN apt-get update -qq && apt-get install -y locales
 
