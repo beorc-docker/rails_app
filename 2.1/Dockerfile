@@ -1,4 +1,4 @@
-FROM httplab/ruby-dev:2.1
+FROM ruby:2.1
 
 RUN apt-get update -qq && apt-get install -y locales
 
