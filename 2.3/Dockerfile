@@ -26,6 +26,8 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
 ENV HOME /home/$USER
 RUN adduser --disabled-password --gecos '' $USER
 
+RUN mkdir -p $GEM_HOME && chown -R $USER $GEM_HOME
+
 RUN mkdir $HOME/$APP
 WORKDIR $HOME/$APP
 

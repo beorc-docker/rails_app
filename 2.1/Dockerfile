@@ -29,6 +29,8 @@ RUN adduser --disabled-password --gecos '' $USER
 RUN mkdir $HOME/$APP
 WORKDIR $HOME/$APP
 
+RUN mkdir -p $GEM_HOME && chown -R $USER $GEM_HOME
+
 RUN chown $USER:$USER $HOME/$APP && \
     chown -R $USER:$USER /usr/local/lib/ruby/gems/$RUBY_MAJOR.0/doc
 
